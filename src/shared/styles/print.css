@@ -1,0 +1,332 @@
+@media print {
+  body *,
+  * {
+    visibility: hidden;
+  }
+
+  .system-view {
+    display: none !important;
+  }
+  
+  /* Fix for print container */
+  .print-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px;
+    padding: 0 !important;
+  }
+
+  .print-table-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 20px;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  
+  .print-view {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  #__next :is(.sm\:\!p-12) {
+    padding: 0rem !important;
+  }
+  
+  [data-mui-color-scheme='dark'] {
+    --mui-palette-text-primary: rgba(38, 43, 67, 0.9);
+    --mui-palette-action-hover: rgba(38, 43, 67, 0.06);
+    --mui-palette-text-secondary: rgba(38, 43, 67, 0.7);
+    --mui-palette-divider: rgba(38, 43, 67, 0.12);
+  }
+
+  .previewCard *,
+  .print-view,
+  .print-view *,
+  .print-container,
+  .print-container *,
+  .print-table-container,
+  .print-table-container *,
+  .header-container,
+  .header-container * {
+    visibility: visible !important;
+  }
+  
+  .previewCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Header container fix */
+  .header-container {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 5px !important;
+    border-bottom: 1px solid gray !important;
+    margin: 0 0 20px 0 !important;
+    background-color: white !important;
+    visibility: visible !important;
+  }
+
+  .header-section,
+  .header-section * {
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .header-section.center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Table styling fix */
+  .preview-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    margin: 10px 0 !important;
+    direction: rtl !important;
+    table-layout: auto !important;
+    overflow: visible !important;
+  }
+
+  .preview-table tr:first-child th:first-child { border-top-right-radius: 10px !important; }
+  .preview-table tr:first-child th:last-child { border-top-left-radius: 10px !important; }
+  .preview-table tr:last-child td:first-child { border-bottom-right-radius: 10px !important; }
+  .preview-table tr:last-child td:last-child { border-bottom-left-radius: 10px !important; }
+
+  /* Specific column hiding for print */
+  [data-column-id='select'],
+  [data-column-id='index'],
+  [data-column-id='options'],
+  [data-column-id='personal_picture'],
+  .system-view {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  /* Remove card and container borders */
+  .MuiCard-root,
+  .MuiCardHeader-root,
+  .MuiCardContent-root,
+  [class*='tableContainer'] {
+    box-shadow: none !important;
+    background: transparent !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Hide unnecessary elements */
+  .MuiIconButton-root,
+  .MuiButton-root,
+  .MuiTabs-root,
+  .MuiTab-root,
+  .TablePagination-root,
+  [class*='Pagination'],
+  [class*='LoadingSpinner'],
+  [class*='skeleton'] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Print header styling */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    max-inline-size: 300px !important;
+    width: 300px !important;
+    height: auto !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  /* Table styling for print */
+  table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    table-layout: auto !important;
+    margin-bottom: 20px !important;
+    direction: rtl !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    overflow: visible !important;
+  }
+
+  table tr:first-child th:first-child,
+  table tr:first-child td:first-child { border-top-right-radius: 10px !important; }
+  table tr:first-child th:last-child,
+  table tr:first-child td:last-child { border-top-left-radius: 10px !important; }
+  table tr:last-child td:first-child { border-bottom-right-radius: 10px !important; }
+  table tr:last-child td:last-child { border-bottom-left-radius: 10px !important; }
+
+  th,
+  td,
+  thead,
+  tbody,
+  tr {
+    border: none !important;
+  }
+
+  th,
+  td {
+    border-bottom: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
+    padding: 6px 4px !important;
+    background-color: white !important;
+    height: auto !important;
+    color: black !important;
+    word-wrap: break-word !important;
+    overflow: hidden !important;
+  }
+
+  /* Remove left border from the left-most cells in RTL (which are actually the last-child in DOM) */
+  th:last-child,
+  td:last-child {
+    border-left: none !important;
+  }
+
+  /* Remove bottom border from the last row */
+  tr:last-child th,
+  tr:last-child td {
+    border-bottom: none !important;
+  }
+
+  thead th {
+    background-color: #f0f0f0 !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  /* Force black text for printing */
+  *,
+  a,
+  a *,
+  span,
+  div,
+  p {
+    color: black !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 10px !important;
+    text-decoration: none !important;
+  }
+
+  .bold-title {
+    font-weight: bold !important;
+    font-size: 12px !important;
+    text-align: start;
+  }
+
+  .print-view .bold-title {
+    font-weight: bold !important;
+    font-size: 12px !important;
+    text-align: start;
+  }
+
+  .preview-table th {
+    text-align: center;
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  .preview-table td {
+    text-align: center;
+  }
+
+  .preview-table td.preview-label {
+    text-align: start;
+    background: #f5f5f5 !important;
+    font-weight: bold;
+    width: 25%;
+  }
+
+  .preview-table td.preview-value {
+    text-align: start;
+    width: 25%;
+  }
+
+  .preview-table thead ~ tbody td.preview-value {
+    width: auto;
+  }
+
+  @page {
+    margin: 2% !important;
+    size: A4;
+  }
+
+  .footer-print-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 30px !important;
+    padding: 10px !important;
+    background-color: white !important;
+    visibility: visible !important;
+    z-index: 1000 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .footer-barcode,
+  .footer-barcode * {
+    visibility: visible !important;
+  }
+}
+
+.system-view {
+  display: block;
+}
+
+.print-view {
+  display: none;
+}
+
+.image {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  inline-size: 100%;
+
+  img {
+    inline-size: 100%;
+    block-size: 100%;
+    max-inline-size: 400px;
+  }
+}

@@ -1,0 +1,75 @@
+.intro-logo-container {
+  position: relative;
+  block-size: 100vh; /* يضمن أن الحاوية تأخذ ارتفاع الشاشة */
+  inline-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* يمنع أي تجاوز غير مرغوب فيه */
+}
+
+.logo-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-inline-size: 250px; /* تحديد حجم الصورة */
+  max-block-size: 250px;
+}
+
+.logo-gif img {
+  inline-size: 100%;
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+/* Header Print component  */
+
+.header-container {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-block-end: 1px solid black;
+  text-align: center;
+}
+
+.header-section {
+  flex: 1;
+}
+
+.right {
+  text-align: start;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: end;
+}
+
+.logo {
+  max-inline-size: 100px;
+  block-size: auto;
+}
+
+.company-logo {
+  max-inline-size: 150px;
+  block-size: auto;
+}
+
+.small-text {
+  font-size: 10px;
+  margin-block-start: 5px;
+}
+
+.MuiChip-label {
+  font-size: 0.75rem !important;
+}
+
+.swal-over-modal {
+  z-index: 9999 !important;
+}
+
+/* End Header Print */

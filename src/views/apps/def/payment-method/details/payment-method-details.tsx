@@ -1,0 +1,98 @@
+'use client'
+
+import * as Shared from '@/shared'
+
+// Define the fields with validation and default values
+const fields: Shared.DynamicFormFieldProps[] = [
+  {
+    name: 'id',
+    label: 'id',
+    modeCondition: (mode: Shared.Mode) => mode,
+    gridSize: 12
+  },
+  {
+    name: 'desc_ar',
+    label: 'desc_ar',
+    type: 'text',
+    requiredModes: ['add', 'edit'],
+    modeCondition: (mode: Shared.Mode) => mode,
+    gridSize: 4
+  },
+
+  {
+    name: 'desc_la',
+    label: 'desc_la',
+    type: 'text',
+    requiredModes: ['add', 'edit'],
+    modeCondition: (mode: Shared.Mode) => mode,
+    gridSize: 4
+  },
+
+  {
+    name: 'status',
+    label: 'status',
+    type: 'select',
+    options: Shared.statusList,
+    requiredModes: ['add', 'edit'],
+    modeCondition: (mode: Shared.Mode) => mode,
+    gridSize: 4
+  }
+]
+
+type paymentMethodFormData = Shared.InferFieldType<typeof fields>
+
+const PaymentMethodDetails = () => {
+  const {
+    formMethods,
+    mode,
+    onSubmit,
+    handleCancel,
+    handleMenuOptionClick,
+    locale,
+    dataModel,
+    closeDocumentsDialog,
+    openDocumentsDialog,
+    openRecordInformationDialog,
+    closeRecordInformationDialog
+  } = Shared.useRecordForm<paymentMethodFormData>({
+    apiEndpoint: '/def/payment-methods',
+    routerUrl: { default: '/apps/def/payment-method' },
+    fields: fields
+  })
+
+  return (
+    <Shared.FormProvider {...formMethods}>
+      <Shared.Grid container spacing={2}>
+        <Shared.Grid size={{ xs: 12 }}>
+          <Shared.Header
+            title={`payment_method`}
+            mode={mode}
+            onMenuOptionClick={handleMenuOptionClick}
+            onCancel={handleCancel}
+            locale={locale}
+          />
+        </Shared.Grid>
+
+        <Shared.Grid size={{ xs: 12 }}>
+          <Shared.FormComponent locale={locale} fields={fields} mode={mode} screenMode={mode} />
+        </Shared.Grid>
+
+        <Shared.Grid size={{ xs: 12 }}>
+          <Shared.FileUploadWithTabs
+            open={openDocumentsDialog}
+            onClose={() => closeDocumentsDialog()}
+            locale={locale}
+            attachments={dataModel.attachments}
+            recordId={dataModel.id}
+          />
+        </Shared.Grid>
+
+        <Shared.Grid size={{ xs: 12 }}>
+          <Shared.FormActions locale={locale} onCancel={handleCancel} onSaveSuccess={onSubmit} mode={mode} />
+        </Shared.Grid>
+      </Shared.Grid>
+    </Shared.FormProvider>
+  )
+}
+
+export default PaymentMethodDetails

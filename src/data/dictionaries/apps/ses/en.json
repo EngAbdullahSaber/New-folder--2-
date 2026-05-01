@@ -1,0 +1,18 @@
+{
+  "placeholders": {
+    "occupation_title": "Job Title",
+    "ageer_contract_no": "Ageer Contract"
+  },
+  "titles": {},
+  "actions": {
+    "change_status": "Change Status",
+    "print_card": "Print Card",
+    "approveVerification": "Approve Verification",
+    "rejectVerification": "Reject Verification",
+    "approveHR": "Approve",
+    "rejectHR": "Reject",
+    "returnHR": "Need Return",
+    "download_cards": "Download Cards",
+    "deliver_type": "Delivery Type"
+  }
+}

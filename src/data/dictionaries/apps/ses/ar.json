@@ -1,0 +1,18 @@
+{
+  "placeholders": {
+    "occupation_title": "المسمى الوظيفي",
+    "ageer_contract_no": "عقد أجير"
+  },
+  "titles": {},
+  "actions": {
+    "change_status": "تغيير الحالة",
+    "print_card": "طباعة كرت العمل",
+    "approveVerification": "اعتماد الأوراق الثبوتية",
+    "rejectVerification": "رفض الأوراق الثبوتية",
+    "approveHR": "اعتماد",
+    "rejectHR": "رفض",
+    "returnHR": "بحاجة إلى الارجاع",
+    "download_cards": "تحميل البطاقات المحولة للطابعة",
+    "deliver_type": "نوع التسليم"
+  }
+}

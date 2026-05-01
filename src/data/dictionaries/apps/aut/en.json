@@ -1,0 +1,29 @@
+{
+  "placeholders": {
+    "id": "ID",
+    "request_date": "Request Date",
+    "status": "Status",
+    "template": "Template",
+    "department": "Department",
+    "personal": "Personal",
+    "name": "Name",
+    "default_city": "Default City",
+    "passport_unit": "Passport Unit",
+    "default_unit": "Default Unit",
+    "print_pdf": "Export PDF",
+    "print_excel": "Export Excel",
+    "audit_fields": "Show Audit Information"
+  },
+  "titles": {
+    "reports": "Reports",
+    "template_requests": "Template Requests",
+    "templates": "Registration Templates",
+    "requests": "Template Requests",
+    "passport_units": "Passport Units"
+  },
+  "navigation": {
+    "template": "Registration Templates",
+    "template-request": "Template Requests"
+  },
+  "request_date": "Request Date"
+}

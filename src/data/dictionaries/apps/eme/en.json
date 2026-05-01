@@ -1,0 +1,10 @@
+{
+  "placeholders": {
+    "checklist_element_group": "Group",
+    "priority_level": "Priority_level",
+    "first_support_file": "First Support File",
+    "last_incharge_job_titel": "Job Title",
+    "reference_id": "Location"
+  },
+  "titles": {}
+}

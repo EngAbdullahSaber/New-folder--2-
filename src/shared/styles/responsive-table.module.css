@@ -1,0 +1,207 @@
+/* src/@core/styles/responsive-table.module.css */
+
+/* Base table wrapper */
+.tableWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Smooth horizontal scroll */
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+
+  /* Custom Scrollbar Styling */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(102, 108, 255, 0.4) transparent;
+}
+
+.tableScroll::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+  width: 8px;  /* Width of vertical scrollbar */
+}
+
+.tableScroll::-webkit-scrollbar-track {
+  background: rgba(var(--mui-mainColorChannels-primary), 0.05);
+  border-radius: 20px;
+}
+
+.tableScroll::-webkit-scrollbar-thumb {
+  background: rgba(102, 108, 255, 0.35); /* Soft primary color */
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background 0.2s ease;
+}
+
+.tableScroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 108, 255, 0.7); /* Solid primary color on hover */
+  background-clip: content-box;
+}
+
+/* ✅ DESKTOP: Allow horizontal scroll if needed */
+@media (min-width: 1025px) {
+  .tableScroll {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .tableScroll table {
+    width: 100%;
+    table-layout: fixed; /* Respect column widths */
+  }
+}
+
+/* ✅ TABLET: Enable scroll, increase min-width */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .tableScroll {
+    overflow-x: auto;
+    background:
+      linear-gradient(90deg, white 30%, rgba(255, 255, 255, 0)),
+      linear-gradient(90deg, rgba(255, 255, 255, 0), white 70%) 100% 0,
+      radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
+      radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)) 100% 0;
+    background-repeat: no-repeat;
+    background-size:
+      40px 100%,
+      40px 100%,
+      14px 100%,
+      14px 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
+  .tableScroll table {
+    table-layout: fixed;
+  }
+
+  .tableScroll table {
+    font-size: 13px;
+  }
+
+  .tableScroll table th,
+  .tableScroll table td {
+    padding: 10px 6px !important;
+  }
+}
+
+/* ✅ MOBILE: Smaller min-width, compact design */
+@media (max-width: 768px) {
+  .tableScroll {
+    overflow-x: auto;
+  }
+
+  .tableScroll table {
+    table-layout: fixed;
+  }
+
+  .tableScroll table th,
+  .tableScroll table td {
+    padding: 8px 4px !important;
+    font-size: 11px !important;
+  }
+
+  .tableScroll table button {
+    transform: scale(0.8);
+  }
+}
+
+/* Sticky first column (optional) */
+@media (max-width: 768px) {
+  .stickyFirstColumn thead th:first-child,
+  .stickyFirstColumn tbody td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--mui-palette-background-paper);
+    z-index: 2;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .stickyFirstColumn thead th:first-child {
+    z-index: 3;
+  }
+}
+
+/* Sticky Action Columns (Last 3) */
+.stickyAction {
+  position: sticky !important;
+   z-index: 2;
+ }
+
+thead .stickyAction {
+  z-index: 3; /* Above body sticky cells */
+}
+
+/* Offsets for sticky actions (assuming fixed widths of 60px and 80px) */
+/* Order from right: Result (80px), Delete (60px), Info (60px) */
+
+.stickyResult {
+  right: 0;
+}
+
+.stickyDelete {
+  right: 80px; /* Width of Result column */
+}
+
+.stickyInfo {
+  right: 140px; /* Width of Result (80) + Delete (60) */
+}
+
+/* Ensure no transparency during scroll */
+.tableScroll tr:hover td.stickyAction {
+  background-color: var(--mui-palette-action-hover) !important;
+}
+
+/* Scroll hint indicator */
+.scrollHint {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px 0 0 4px;
+  font-size: 12px;
+  pointer-events: none;
+  animation: pulseHint 2s infinite;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .scrollHint {
+    display: block;
+  }
+
+  .scrolled .scrollHint {
+    display: none;
+  }
+}
+
+@keyframes pulseHint {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Print styles */
+@media print {
+  .tableScroll {
+    overflow: visible !important;
+  }
+
+  .tableScroll table {
+    min-width: 100% !important;
+    width: 100% !important;
+    table-layout: auto !important;
+  }
+
+  .scrollHint {
+    display: none !important;
+  }
+}

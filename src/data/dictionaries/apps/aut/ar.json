@@ -1,0 +1,34 @@
+{
+  "placeholders": {
+    "id": "الرقم",
+    "request_date": "تاريخ الطلب",
+    "status": "الحالة",
+    "template": "القالب",
+    "department": "الإدارة",
+    "personal": "الموظف",
+    "name": "الاسم",
+    "default_city": "مدينة إفتراضية",
+    "passport_unit": "وحدة",
+    "default_unit": "وحدة إفتراضية",
+    "print_pdf": "تصدير ملف pdf",
+    "print_excel": "تصدير ملف excel",
+    "audit_fields": "معلومات السجل"
+  },
+  "titles": {
+    "reports": "التقارير",
+    "template_requests": "مستخدمي المراكز",
+    "templates": "نماذج التسجيل",
+    "requests": "طلبات النماذج",
+    "passport_units": "الوحدات"
+  },
+  "actions": {
+    "print_pdf": "تصدير ملف pdf",
+    "print_excel": "تصدير ملف excel",
+    "audit_fields": "معلومات السجل"
+  },
+  "navigation": {
+    "template": "نماذج التسجيل",
+    "template-request": "طلبات النماذج"
+  },
+  "request_date": "تاريخ الطلب"
+}

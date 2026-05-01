@@ -1,0 +1,12 @@
+{
+  "placeholders": {
+    "checklist_element_group": "المجموعة",
+    "priority_level": "مستوى الأهمية",
+    "first_support_file": " المرفقات",
+    "last_incharge_job_titel": "الصفة",
+    "reference_id": "الموقع"
+  },
+  "titles": {
+    "form_type": "نوع الاستمارة"
+  }
+}

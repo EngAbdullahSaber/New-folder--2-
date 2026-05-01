@@ -1,0 +1,43 @@
+/*!
+ * Bootstrap Icons (Subset) - Only icons used in this project.
+ * Full library: https://icons.getbootstrap.com/ (MIT License)
+ * Generated: Manually selected from icons actually used in codebase.
+ * This replaces the full 97 KB bootstrap-icons.css import.
+ */
+
+@font-face {
+  font-display: swap;
+  font-family: "bootstrap-icons";
+  src: url("/fonts/bootstrap-icons.woff2") format("woff2");
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Only the icons actually used in the codebase */
+.bi-camera::before { content: "\f220"; }
+.bi-download::before { content: "\f30a"; }
+.bi-file-earmark::before { content: "\f392"; }
+.bi-file-earmark-excel-fill::before { content: "\f367"; }
+.bi-file-earmark-fill::before { content: "\f369"; }
+.bi-file-earmark-image-fill::before { content: "\f36c"; }
+.bi-file-earmark-pdf-fill::before { content: "\f384"; }
+.bi-file-earmark-ppt-fill::before { content: "\f380"; }
+.bi-file-earmark-text-fill::before { content: "\f38a"; }
+.bi-file-earmark-word-fill::before { content: "\f38c"; }
+.bi-file-earmark-zip-fill::before { content: "\f390"; }
+.bi-image::before { content: "\f39b"; }
+.bi-trash::before { content: "\f5de"; }
+.bi-upload::before { content: "\f603"; }
